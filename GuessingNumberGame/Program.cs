@@ -11,8 +11,10 @@ namespace GuessingNumberGame
         static void Main(string[] args)
         {
             WelcomeMessage();
-            int randomNumber = RandomNumber();
-            Results(randomNumber);
+            //gerating a random number using the Random Class
+            Random random = new Random();
+            int secretNumber = random.Next(1, 100);
+            Results(secretNumber);
         }
 
         static void WelcomeMessage() 
@@ -49,13 +51,6 @@ namespace GuessingNumberGame
 
             }
          
-
-        }
-        static int RandomNumber()
-        {
-            Random random = new Random();
-            int secretNumber = random.Next(1, 100);
-            return secretNumber; 
         }
 
     }
