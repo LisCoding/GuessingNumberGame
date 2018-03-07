@@ -13,21 +13,21 @@ namespace GuessingNumberGame
             
         }
 
-        public void WelcomeMessage() 
+        static void WelcomeMessage() 
         {
            Console.WriteLine("Welcome to guessing number!");
         }
-        public string UserInput()
+        static string UserInput()
         {
             Console.WriteLine("Guess a number between 1 to 100");
             string userGuess = Console.ReadLine();
             return userGuess;
         }
-        public void Results(int number)
+        static void Results(int number)
         {
 
         }
-        public int RandomNumber()
+        static int RandomNumber()
         {
             return 1; 
         }
