@@ -10,7 +10,9 @@ namespace GuessingNumberGame
     {
         static void Main(string[] args)
         {
-            
+            WelcomeMessage();
+            int randomNumber = RandomNumber();
+            Results(randomNumber);
         }
 
         static void WelcomeMessage() 
@@ -25,11 +27,35 @@ namespace GuessingNumberGame
         }
         static void Results(int number)
         {
+            bool guess = false;
+         
+            while(guess == false)
+            {
+                int userGuess = Int32.Parse(UserInput());    
+                if (number == userGuess)
+                {
+                    Console.WriteLine("hey you are genious, you guess the right number");
+                    guess = true;
+                    Console.ReadLine();
+                }
+                else if (number > userGuess)
+                {
+                    Console.WriteLine("too low, try again");               
+                }
+                else
+                {
+                    Console.WriteLine("too High, try again");
+                }
+
+            }
+         
 
         }
         static int RandomNumber()
         {
-            return 1; 
+            Random random = new Random();
+            int secretNumber = random.Next(1, 100);
+            return secretNumber; 
         }
 
     }
