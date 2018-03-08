@@ -30,13 +30,14 @@ namespace GuessingNumberGame
         static void Results(int number)
         {
             bool guess = false;
-         
+            int count = 0;
             while(guess == false)
             {
+                count++;
                 int userGuess = Int32.Parse(UserInput());    
                 if (number == userGuess)
                 {
-                    Console.WriteLine("hey you are genious, you guess the right number");
+                    Console.WriteLine("hey you are genious, you guess the right number in {0} tries", count);
                     guess = true;
                     Console.ReadLine();
                 }
@@ -48,7 +49,7 @@ namespace GuessingNumberGame
                 {
                     Console.WriteLine("too High, try again");
                 }
-
+               
             }
          
         }
